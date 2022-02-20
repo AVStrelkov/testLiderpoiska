@@ -79,7 +79,12 @@ module.exports = (env, argv) => {
         use: ["pug-plain-loader"],
       },
       {
-        use: ["pug-loader"],
+        use: [{
+          loader: 'pug-loader',
+          options: {
+            pretty: true,
+          },
+        }],
       },
     ],
   };
@@ -124,6 +129,11 @@ module.exports = (env, argv) => {
         template: "src/admin/index.pug",
         filename: "admin/index.html",
         chunks: ["admin"],
+      }),
+      new HtmlWebpackPlugin({
+        template: "src/basket.pug",
+        filename: "basket.html",
+        chunks: ["main"],
       }),
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin(),

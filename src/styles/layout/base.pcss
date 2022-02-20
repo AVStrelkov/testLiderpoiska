@@ -1,6 +1,6 @@
 html {
-  @include desktop {
-    font-size: 15px;
+  @include desktopHd {
+    font-size: 16px;
   }
   @include tablets {
     font-size: 14px;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
@@ -20,15 +20,23 @@ body {
   color: $text-color;
 }
 
-.wrapper {
+#transition_disabled{
+  transition: none;
+}
+
+.maincontent {
   overflow: hidden;
   min-height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 320px;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1480px;
+  max-width: 1170px;
   width: 95%;
   // width: 1490px;
 

@@ -16,6 +16,12 @@
   }
 }
 
+@mixin tablets-min() {
+  @media screen and (max-width: $bp-tablets-min) {
+    @content;
+  }
+}
+
 @mixin phones() {
   @media screen and (max-width: $bp-phones) {
     @content;

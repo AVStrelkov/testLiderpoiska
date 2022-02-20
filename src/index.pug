@@ -6,10 +6,91 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
-  body
-    .wrapper
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/dependencyLibs/inputmask.dependencyLib.min.js");
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.min.js");  
+    title Liderpoiska | main page
+  body#transition_disabled
+    
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        include ./sections/header.pug      
+        section.main-content
+          .container
+            h1.title Каталог товаров
+            .product
+              ul.product__list 
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image1.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Увлажнитель воздуха STARWIND SHC1322, 3л, белый
+                      .product__price.product__price-mtop #[span 1650] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image2.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Триммер PHILIPS HC3521/15 серебристый/черный
+                      .product__price.product__price-mtop #[span 2290] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image3.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Фитнес-трекер HONOR Band 5 CRS-B19S, 0.95", розовый
+                      .product__price.product__price-mtop #[span 2390] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image4.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Мышь A4TECH Bloody V3, игровая, оптическая, проводная, USB, черный
+                      .product__price.product__price-mtop #[span 960] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image5.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Фитнес-трекер HONOR Band 5 CRS-B19S, 0.95",черный
+                      .product__price.product__price-mtop #[span 2390] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image6.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Пылесос SINBO SVC 3497, 2500Вт, синий/серый
+                      .product__price.product__price-mtop #[span 1650] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image7.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Планшет DIGMA Optima 7 Z800 Android 10.0 серебристый
+                      .product__price.product__price-mtop #[span 9490] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image8.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Монитор игровой ACER Nitro RG241YPbiipx 23.8" черный
+                      .product__price.product__price-mtop #[span 16800] ₽
+                      .product__btn.blue Добавить в корзину
+                li.product__item
+                  a.product__link
+                    .product__img 
+                      +image(`content/product/image9.jpg`, 'product__pic')
+                    .product__info
+                      .product__about.product__about-size Экшн-камера DIGMA DiCam 310 4K, WiFi, черный
+                      .product__price.product__price-mtop #[span 2290] ₽
+                      .product__btn.blue Добавить в корзину
+        include ./sections/footer.pug
+        //- +image('content/user.jpg', 'user-pic')
+        //- +icon('link', 'link-class')
+        //- .icon-bg
