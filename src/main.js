@@ -134,7 +134,7 @@ if(document.querySelector('.basket-product__list')){
     const newItem = document.createElement('li');
     newItem.classList.add('basket-product__item');
     newItem.innerHTML = `
-    <div class="product__img product__img-maxsize"><img class="product__pic" src="/${newArray[i].img.split("/").reverse()[0]}"></div>
+    <div class="product__img product__img-maxsize"><img class="product__pic" src="./${newArray[i].img.split("/").reverse()[0]}"></div>
     <div class="product__info">
       <div class="product__about product__about-maxsize">${newArray[i].about}</div>
       <div class="product__count">
