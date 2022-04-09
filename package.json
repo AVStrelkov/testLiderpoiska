@@ -69,7 +69,9 @@
     "pug": "^3.0.0",
     "request": "^2.88.0",
     "signale": "^1.4.0",
+    "swiper": "^6.0.4",
     "vue": "^2.6.7",
+    "vue-awesome-swiper": "^5.0.0",
     "vue-router": "^3.0.2"
   }
 }

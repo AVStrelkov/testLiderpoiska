@@ -6,91 +6,108 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/dependencyLibs/inputmask.dependencyLib.min.js");
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.min.js");  
-    title Liderpoiska | main page
-  body#transition_disabled
-    
+    title Portfolio | main page
+  body
+    .wrapper
       .maincontent
-        include ./sections/header.pug      
-        section.main-content
+        .welcomsektion
           .container
-            h1.title Каталог товаров
-            .product
-              ul.product__list 
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image1.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Увлажнитель воздуха STARWIND SHC1322, 3л, белый
-                      .product__price.product__price-mtop #[span 1650] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image2.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Триммер PHILIPS HC3521/15 серебристый/черный
-                      .product__price.product__price-mtop #[span 2290] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image3.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Фитнес-трекер HONOR Band 5 CRS-B19S, 0.95", розовый
-                      .product__price.product__price-mtop #[span 2390] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image4.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Мышь A4TECH Bloody V3, игровая, оптическая, проводная, USB, черный
-                      .product__price.product__price-mtop #[span 960] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image5.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Фитнес-трекер HONOR Band 5 CRS-B19S, 0.95",черный
-                      .product__price.product__price-mtop #[span 2390] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image6.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Пылесос SINBO SVC 3497, 2500Вт, синий/серый
-                      .product__price.product__price-mtop #[span 1650] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image7.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Планшет DIGMA Optima 7 Z800 Android 10.0 серебристый
-                      .product__price.product__price-mtop #[span 9490] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image8.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Монитор игровой ACER Nitro RG241YPbiipx 23.8" черный
-                      .product__price.product__price-mtop #[span 16800] ₽
-                      .product__btn.blue Добавить в корзину
-                li.product__item
-                  a.product__link
-                    .product__img 
-                      +image(`content/product/image9.jpg`, 'product__pic')
-                    .product__info
-                      .product__about.product__about-size Экшн-камера DIGMA DiCam 310 4K, WiFi, черный
-                      .product__price.product__price-mtop #[span 2290] ₽
-                      .product__btn.blue Добавить в корзину
-        include ./sections/footer.pug
+            .human
+              header.header
+                .logo АС
+                .nav
+                  ul.nav__list
+                    each nav in [{ id: '#about', section: 'Обо мне' },{ id: '#skills', section: 'Навыки' }, { id: '#work', section: 'Работы' }, { id: '#reviews', section: 'Отзывы' }]
+                      li.nav__item
+                        a(href=`${nav.id}`).nav__link #{nav.section} 
+                .social
+                  ul.social__list
+                    each social in [{link:'https://github.com/AVStrelkov', pages:'github'}, {link:'https://vk.com/avshooter', pages:'vk'}]
+                      li.social__item
+                        a(href=`${social.link}`).social__link
+                          +icon(social.pages, 'social__icon') 
+                a.hamburgermenu
+                  .hamburgermenu__row
+                  .hamburgermenu__row
+                  .hamburgermenu__row
+              .userinfo
+                .userinfo__text Личный сайт #[br] веб разработчика
+                h1.userinfo__name Александр #[br] Стрелков
+              .scroll
+                a.scroll__link(href="#about") 
+                  .scroll__arrow Скролл
+                  +icon('scroll', 'scroll__down') 
+            .about#about
+              .about__left
+                .about__pic 
+                  +image('content/user.jpg', 'about__user')
+                -
+                  const array = [
+                    ['Проживаю', 'Самара'],
+                    ['Возраст', '35 лет'],
+                    ['Родился', '24 августа 1986']
+                  ]
+                table.table 
+                  each item in array
+                    tr.table__row 
+                      each info in item 
+                        td.table__column #{info}
+              .about__right
+                .about__hello Привет, меня зовут
+                h2.about__name Александр Стрелков
+                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .skills#skills
+          .hands__img
+            +image('content/hands.png', '.hands__pic')
+          .skill__info 
+            h3.skills__title Чем я могу быть полезен вам
+            .skills__about Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво! 
+            #skills-component
+        .work#work
+          .container
+            .work__title Мои работы
+            #preview-component
+        .reviews#reviews
+          .container
+            #reviews-component
+        footer.footer   
+          .container
+            .footer__left
+              .year © 2020
+              .name Александр Стрелков
+              .userinfo__text-left Личный сайт веб разработчика
+            .footer__right 
+              .footer__nav 
+                ul.nav__list
+                    each nav in ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
+                      li.nav__item
+                        a(href="#").nav__link #{nav} 
+              .footer__info 
+                .footer__info-colum
+                  .text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  .social
+                    ul.social__list
+                      each social in ['insta', 'github', 'vk', 'envelope']
+                        li.social__item
+                          a(href="#").social__link
+                            +icon(social, 'social__icon') 
+                .footer__info-colum
+                  .quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .author Martin Golding
+    include ./templates/entry.pug
+
+
+
+
+
+
+
+
+
+
         //- +image('content/user.jpg', 'user-pic')
         //- +icon('link', 'link-class')
         //- .icon-bg
+        //- h1 Приает
+        //- a(href="#") Я ссылка

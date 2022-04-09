@@ -130,11 +130,6 @@ module.exports = (env, argv) => {
         filename: "admin/index.html",
         chunks: ["admin"],
       }),
-      new HtmlWebpackPlugin({
-        template: "src/basket.pug",
-        filename: "basket.html",
-        chunks: ["main"],
-      }),
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin(),
     ],
